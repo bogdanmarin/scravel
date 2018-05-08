@@ -1,0 +1,25 @@
+{
+  "name": "scravel",
+  "version": "1.0.0",
+  "dependencies": {
+    "connect": "^3.6.5",
+    "gulp": "^3.9.1",
+    "serve-static": "^1.13.1",
+    "typescript": "^2.5.3"
+  },
+  "scripts": {
+    "setup": "gulp",
+    "build_client": "tsc --module system --outFile dist/client.js --noImplicitAny --sourceMap --target ES5 src/client/client.ts",
+    "build_server": "tsc --module commonjs --outDir dist/ --noImplicitAny --sourceMap --target ES5 src/server/server.ts",
+    "start": "npm run setup && npm run build_client && npm run build_server && node dist/server.js"
+  },
+  "devDependencies": {
+    "@types/connect": "^3.4.31",
+    "@types/facebook-js-sdk": "^2.8.3",
+    "@types/jquery": "^3.2.13",
+    "@types/node": "^8.0.34",
+    "@types/qs": "^6.5.0",
+    "@types/serve-static": "^1.7.32",
+    "@types/webfontloader": "^1.6.29"
+  }
+}
